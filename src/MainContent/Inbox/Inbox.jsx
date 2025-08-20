@@ -12,7 +12,7 @@ function Inbox() {
     const userId = JSON.parse(localStorage.getItem('user'));
        const getNotification = async()=>{
          try{
-           const response = await fetch(`http://localhost:3000/getNotification/${userId.id}`,{
+           const response = await fetch(`https://jobtracker-backend-ql5b.onrender.com/getNotification/${userId.id}`,{
            method:'GET'
          })
          const data = await response.json();

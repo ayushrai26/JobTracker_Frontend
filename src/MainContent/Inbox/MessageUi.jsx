@@ -15,7 +15,7 @@ function MessageUi({company,skill,id}) {
   const handleDelete =async()=>{
     console.log(id)
       try{
-          const response =    await fetch(`http://localhost:3000/deleteNotification/${id}`,{
+          const response =    await fetch(`https://jobtracker-backend-ql5b.onrender.com/deleteNotification/${id}`,{
                 method:'DELETE'
               })
               if(response.ok){

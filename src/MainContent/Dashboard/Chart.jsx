@@ -21,7 +21,7 @@ const {isActive} = useContext(ChartContext)
     
       const fetchTotalNumberJobsData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/fetch-all-jobs');
+        const res = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch-all-jobs');
         const data = await res.json();
         console.log(data,'data')
          

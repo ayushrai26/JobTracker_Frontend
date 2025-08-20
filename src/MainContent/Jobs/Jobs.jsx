@@ -15,7 +15,7 @@ const role = user.role || '';
     const fetchJobs = async () => {
       try {
         
-        const response = await fetch('http://localhost:3000/fetch-all-jobs',{
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch-all-jobs',{
           method:'GET'
         });
         

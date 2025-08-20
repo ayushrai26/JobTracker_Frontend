@@ -50,7 +50,7 @@ function PostJob({setValue}) {
      }
 
      try{
-      const response =  await fetch('http://localhost:3000/new-job',{
+      const response =  await fetch('https://jobtracker-backend-ql5b.onrender.com/new-job',{
          method:'POST',
          headers:{
           'Content-Type': 'application/json'

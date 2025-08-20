@@ -37,7 +37,7 @@ function UserDashboard() {
   useEffect(()=>{
     const jobsLength =async()=>{
     try{
-      const response = await fetch('http://localhost:3000/fetch-all-jobs')
+      const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch-all-jobs')
       const data = await response.json()
       setJobs(Array.isArray(data.jobs)?data.jobs.length:0)
       if(!Array.isArray(data)){
@@ -49,7 +49,7 @@ function UserDashboard() {
   }
   const savedLength = async()=>{
     try{
-      const response = await fetch('http://localhost:3000/fetch-bookmark-jobs/length',{
+      const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch-bookmark-jobs/length',{
         method:'GET',
         headers:{
           'Content-Type':'application/json',
@@ -65,7 +65,7 @@ function UserDashboard() {
   }
   const Applied = async()=>{
     try{
-      const response = await fetch('http://localhost:3000/fetch/user-applied-applications',{
+      const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/user-applied-applications',{
         headers:{
           'Authorization':`Bearer ${localStorage.getItem('token')}`
         }
@@ -81,7 +81,7 @@ function UserDashboard() {
 
   const InterviewScheduled = async()=>{
     try{
-                   const response  = await fetch('http://localhost:3000/fetch/interview-scheduled',{
+                   const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/interview-scheduled',{
                     headers:{
                       'Authorization':`Bearer ${localStorage.getItem('token')}`
                     }
@@ -98,7 +98,7 @@ function UserDashboard() {
 
   const rejected = async()=>{
     try{
-                   const response  = await fetch('http://localhost:3000/fetch/rejected',{
+                   const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/rejected',{
                     headers:{
                       'Authorization':`Bearer ${localStorage.getItem('token')}`
                     }
@@ -115,7 +115,7 @@ function UserDashboard() {
 
   const selected = async()=>{
     try{
-                   const response  = await fetch('http://localhost:3000/fetch/selected',{
+                   const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/selected',{
                     headers:{
                       'Authorization':`Bearer ${localStorage.getItem('token')}`
                     }
@@ -132,7 +132,7 @@ function UserDashboard() {
 
   const underReview = async()=>{
     try{
-                   const response  = await fetch('http://localhost:3000/fetch/underReview',{
+                   const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/underReview',{
                     headers:{
                       'Authorization':`Bearer ${localStorage.getItem('token')}`
                     }
@@ -149,7 +149,7 @@ function UserDashboard() {
 
   const shortlisted = async()=>{
     try{
-                   const response  = await fetch('http://localhost:3000/fetch/shortlisted',{
+                   const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/shortlisted',{
                     headers:{
                       'Authorization':`Bearer ${localStorage.getItem('token')}`
                     }

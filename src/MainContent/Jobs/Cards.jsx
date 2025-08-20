@@ -25,7 +25,7 @@ function Cards({ job }) {
 useEffect(()=>{
   const isJobApplied = async()=>{
     try{
-         const response =  await fetch('http://localhost:3000/isAppliedJob',{
+         const response =  await fetch('https://jobtracker-backend-ql5b.onrender.com/isAppliedJob',{
               method:'POST',
               headers:{
                 'Content-Type':'application/json'
@@ -52,7 +52,7 @@ useEffect(()=>{
     
     try{
 
-    const response = await fetch('http://localhost:3000/delete/bookmarked/job', {
+    const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/delete/bookmarked/job', {
           method: 'DELETE',
           headers:{
             "Content-Type": "application/json",
@@ -81,7 +81,7 @@ useEffect(()=>{
      try {
       
         // Save bookmark
-        const response = await fetch('http://localhost:3000/bookmark-jobs', {
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/bookmark-jobs', {
           method: 'POST',
           headers: { 'content-Type': 'application/json' },
           body: JSON.stringify({
@@ -126,7 +126,7 @@ useEffect(()=>{
   useEffect(() => {
     const fetchBookmarked = async () => {
       try {
-        const response = await fetch("http://localhost:3000/fetch-bookmark-jobs",{
+        const response = await fetch("https://jobtracker-backend-ql5b.onrender.com/fetch-bookmark-jobs",{
           method:'POST',
           headers:{
             'Content-Type':'application/json',

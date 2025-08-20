@@ -26,7 +26,7 @@ function Apply() {
   }
 const sendEmail = async()=>{
       try{
-        const response = await fetch('http://localhost:3000/sendEmail',{
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/sendEmail',{
     method:'POST',
     headers:{
       'content-Type' :'application/json'
@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
       const formData = new FormData();
       formData.append("resume", file);
 
-      const res = await fetch("http://localhost:3000/upload/upload-resume", {
+      const res = await fetch("https://jobtracker-backend-ql5b.onrender.com/upload/upload-resume", {
         method: "POST",
         body: formData,
       });
@@ -76,7 +76,7 @@ const handleSubmit = async (e) => {
 
     // ✅ Save application
     const response = await fetch(
-      "http://localhost:3000/save/user-applied-applications",
+      "https://jobtracker-backend-ql5b.onrender.com/save/user-applied-applications",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -119,7 +119,7 @@ const handleSubmit = async (e) => {
 
     // Save notification
     if (user) {
-      await fetch("http://localhost:3000/saveNotifications", {
+      await fetch("https://jobtracker-backend-ql5b.onrender.com/saveNotifications", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ company, skill: jobInfo?.jobDetails?.jobTitle, userId: user.id }),
@@ -144,7 +144,7 @@ const handleSubmit = async (e) => {
     const fetchJob= async()=>{
       try{
         
-        const response = await fetch('http://localhost:3000/fetch-individual-job',{
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch-individual-job',{
           method:'POST',
           headers:{
             'Content-Type':'application/json'

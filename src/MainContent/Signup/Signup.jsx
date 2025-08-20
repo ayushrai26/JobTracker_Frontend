@@ -19,7 +19,7 @@ const [fullName,setFullName] = useState('')
   const handleSubmit = async (e)=>{
     e.preventDefault();
     try{
-        const response = await fetch('http://localhost:3000/user/signup',{
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/user/signup',{
             method:'POST',
              headers: {
     'Content-Type': 'application/json'

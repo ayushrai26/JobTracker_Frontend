@@ -32,7 +32,7 @@ const[editProfileButton,setEditProfileButton] = useState(false)
   useEffect(()=>{
      const Applied = async()=>{
     try{
-      const response = await fetch('http://localhost:3000/fetch/user-applied-applications',{
+      const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/user-applied-applications',{
         headers:{
           "Authorization":`Bearer ${localStorage.getItem('token')}`
         }
@@ -52,7 +52,7 @@ const[editProfileButton,setEditProfileButton] = useState(false)
       const formData = {fullName,email,MobileNumber:mobileNumber,Gender:gender,JobTitle:jobTitle}
       try{
 
-       const response = await fetch('http://localhost:3000/edit-profile',{
+       const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/edit-profile',{
         method:'PUT',
         headers:{
           'content-Type':'application/json'
@@ -102,7 +102,7 @@ const[editProfileButton,setEditProfileButton] = useState(false)
     
   const timeoutId = setTimeout(async () => {
     try {
-      const response = await fetch(`http://localhost:3000/jobs/search-jobs?search=${query}`);
+      const response = await fetch(`https://jobtracker-backend-ql5b.onrender.com/jobs/search-jobs?search=${query}`);
       
       const data = await response.json();
       console.log(data)
@@ -126,7 +126,7 @@ useEffect(()=>{
      const fetchPersonalInfo = async()=>{
       try{
         const userId = JSON.parse(localStorage.getItem('user'));
-        const response =  await fetch(`http://localhost:3000/personalinfo/${userId.id}`)
+        const response =  await fetch(`https://jobtracker-backend-ql5b.onrender.com/personalinfo/${userId.id}`)
         const data = await response.json();
         console.log(data);
         setUserName(data.existingUser.fullName)
@@ -153,7 +153,7 @@ useEffect(()=>{
       
      try{
     const user  = JSON.parse(localStorage.getItem('user'))
-   const response  = await fetch(`http://localhost:3000/personalinfo/${user.id}`)  
+   const response  = await fetch(`https://jobtracker-backend-ql5b.onrender.com/personalinfo/${user.id}`)  
    const data =  await response.json();
    console.log('urlData',data)
    setPreview(data.existingUser.userProfilePicUrl)
@@ -182,7 +182,7 @@ useEffect(()=>{
       
 
       try {
-    const res = await fetch('http://localhost:3000/upload/user-profile-pic', {
+    const res = await fetch('https://jobtracker-backend-ql5b.onrender.com/upload/user-profile-pic', {
       method: 'POST',
       body: formData,
     });
@@ -192,7 +192,7 @@ useEffect(()=>{
     if (res.ok) {
       console.log('Uploaded image URL:', data.secure_url);
       setPreview(data.secure_url); 
-const response =    await fetch(`http://localhost:3000/save-profile-pic/${user.id}`, {
+const response =    await fetch(`https://jobtracker-backend-ql5b.onrender.com/save-profile-pic/${user.id}`, {
   method: 'PATCH',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ userProfilePicUrl: data.secure_url })

@@ -11,7 +11,7 @@ function ForgotPassword() {
    const handleSubmit=async(e)=>{
      e.preventDefault();
      try{
-        const response = await fetch('http://localhost:3000/forgetPassword',{
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/forgetPassword',{
       method:'POST',
       headers: { 'Content-Type': 'application/json' },
       body:JSON.stringify({email})
@@ -31,7 +31,7 @@ function ForgotPassword() {
    const handleFinalSubmit=async(e)=>{
     e.preventDefault();
     try{
-       const response =   await fetch('http://localhost:3000/changePassword',{
+       const response =   await fetch('https://jobtracker-backend-ql5b.onrender.com/changePassword',{
             method:'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body:JSON.stringify({email,password})

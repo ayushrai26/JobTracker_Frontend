@@ -29,7 +29,7 @@ rejectedCandidates,setRejectedCandidates,underReviewCandidates,setUnderReviewCan
   useEffect(()=>{
       const fetchAllJobs =async()=>{
       try{
-        const response = await fetch('http://localhost:3000/fetch-all-jobs')
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch-all-jobs')
         const data = await response.json()
         
         setJobs(Array.isArray(data.jobs)?data.jobs.length:0)
@@ -41,7 +41,7 @@ rejectedCandidates,setRejectedCandidates,underReviewCandidates,setUnderReviewCan
     
     const allAppliedJobs = async()=>{
       try{
-        const response = await fetch('http://localhost:3000/fetch/all-applied-applications')
+        const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/fetch/all-applied-applications')
         const data = await response.json();
     
         setAppliedApplication(Array.isArray(data.allApplication)?data.allApplication:[])
@@ -59,7 +59,7 @@ allAppliedJobs()
 },[])
 
 const fetchApplicationStatus = async()=>{
-      const response = await fetch('http://localhost:3000/admin/fetch-application-status')
+      const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/admin/fetch-application-status')
       const data = await response.json();
       console.log('applicationStatus',data)
     const statusMap = data.reduce((acc, { jobId, status }) => {
@@ -72,7 +72,7 @@ const fetchApplicationStatus = async()=>{
     }
   
     const fetchForShortlistedCandidate = async()=>{
-                const response =   await fetch('http://localhost:3000/admin/fetch-shortlisted-candidate')
+                const response =   await fetch('https://jobtracker-backend-ql5b.onrender.com/admin/fetch-shortlisted-candidate')
                 const data = await response.json()
                 console.log(data.shortlistedCandidate)
                 setShortlistedCandidate(data.shortlistedCandidate)
@@ -80,7 +80,7 @@ const fetchApplicationStatus = async()=>{
     }
     
       const fetchInterviewScheduledCandidates = async()=>{
-        const response  = await fetch('http://localhost:3000/admin/fetch-interview-scheduled-candidates')
+        const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/admin/fetch-interview-scheduled-candidates')
         const data = await response.json()
         console.log('InterviewScheduledcanddiates',data.InterviewScheduledCandidates)
     
@@ -88,22 +88,22 @@ const fetchApplicationStatus = async()=>{
       }
       
 const fetchInterviewedCandidates = async()=>{
-  const response  = await fetch('http://localhost:3000/admin/fetch-interviewed-candidates')
+  const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/admin/fetch-interviewed-candidates')
   const data = await response.json()
   setInterviewedCandidates(data.InterviewedCandidates)
 }
 const fetchSelectedCandidates = async()=>{
-  const response  = await fetch('http://localhost:3000/admin/fetch-selected-candidates')
+  const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/admin/fetch-selected-candidates')
   const data = await response.json()
   setSelectedCandidates(data.SelectedCandidates)
 }
 const fetchRejectedCandidates = async()=>{
-  const response  = await fetch('http://localhost:3000/admin/fetch-rejected-candidates')
+  const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/admin/fetch-rejected-candidates')
   const data = await response.json()
   setRejectedCandidates(data.RejectedCandidates)
 }
 const fetchUnderReviewCandidates = async()=>{
-  const response  = await fetch('http://localhost:3000/admin/fetch-under-review-candidates')
+  const response  = await fetch('https://jobtracker-backend-ql5b.onrender.com/admin/fetch-under-review-candidates')
   const data = await response.json()
   setUnderReviewCandidates(data.UnderReviewCandidates)
 }
@@ -113,7 +113,7 @@ useEffect(()=>{
       const {jobId,status,userId} = lastUpdated
     try {
          
-      await fetch(`http://localhost:3000/admin/save-application-status/${jobId}`, {
+      await fetch(`https://jobtracker-backend-ql5b.onrender.com/admin/save-application-status/${jobId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({status,

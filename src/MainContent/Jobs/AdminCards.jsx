@@ -15,7 +15,7 @@ function AdminCards({job,setAllJob,setRefreshFlag}) {
   const handleDelete = async()=>{
     try{
         
-      const response  = await fetch(`http://localhost:3000/admin/delete-job/${job._id}`,{
+      const response  = await fetch(`https://jobtracker-backend-ql5b.onrender.com/admin/delete-job/${job._id}`,{
         method:'DELETE'
       })
       const data = await response.json();
