@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 import savedImage from '../../assets/No request found.mp4'
 
-import Filter from '../Jobs/filter'
+import Filter from '../Jobs/Filter'
 import AdminCards from './AdminCards';
 function Jobs({ countValue }) {
   
