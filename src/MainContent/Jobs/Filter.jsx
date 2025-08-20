@@ -2,8 +2,6 @@ import React from 'react'
 import  {  useState,useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { IoFilter } from "react-icons/io5";
-import { FaToggleOff } from "react-icons/fa6";
-import { MdOutlineToggleOff } from "react-icons/md";
 import { PiToggleLeftLight } from "react-icons/pi"
 import { MdToggleOn } from "react-icons/md";
 import data from '../../assets/data.json'

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Filter from '../Jobs/filter';
+import Filter from './Filter.jsx';
 import Cards from '../Jobs/Cards';
 import { filteredContext } from '../../ContextAPI/FilteredJobs/createContext.js';
 import Lottie from 'lottie-react'
