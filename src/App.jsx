@@ -22,7 +22,7 @@ function App() {
     <BookmarkProvider>
     <ChartProvider>
     <HomeScreen/>
-    <ToastContainer position='top-right' autoClose={3000}/>
+    <ToastContainer position='top-right' autoClose={2000}/>
     </ChartProvider>
     </BookmarkProvider>
 

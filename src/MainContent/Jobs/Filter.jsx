@@ -1,236 +1,171 @@
-import React from 'react'
-import  {  useState,useContext } from 'react';
-import { useNavigate } from 'react-router';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router";
 import { IoFilter } from "react-icons/io5";
-import { PiToggleLeftLight } from "react-icons/pi"
+import { PiToggleLeftLight } from "react-icons/pi";
 import { MdToggleOn } from "react-icons/md";
-import data from '../../assets/data.json'
-import { toast } from 'react-toastify';
-import {filteredContext} from '../../ContextAPI/FilteredJobs/createContext.js'
+import data from "../../assets/data.json";
+import { toast } from "react-toastify";
+import { filteredContext } from "../../ContextAPI/FilteredJobs/createContext.js";
+
 function Filter() {
-  const [roles,setRoles] = useState('')
-    const [state,setState] = useState('')
-    const [city,setCity]  = useState('')
-    const [salary,setSalary] = useState(0)
-    
-   const {setFilterd}   = useContext(filteredContext);
+  const [roles, setRoles] = useState("");
+  const [state, setState] = useState("");
+  const [city, setCity] = useState("");
+  const [salary, setSalary] = useState(0);
+  const { setFilterd } = useContext(filteredContext);
   const navigate = useNavigate();
-  const [toggleOn,setToggleOn] = useState(false)
-     const [skills,setSkills] = useState('');
-     const States = [
+  const [toggleOn, setToggleOn] = useState(false);
+  const [skills, setSkills] = useState("");
+
+  const States = [
     "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh",
     "Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha",
-    "Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"];
-    const Skills = ['FullStack','Frontend','Backend',' MobileDevelopment ',' QATesting','DevOps,Cloud,Infra',' Security',
-      ' DataAI','ProductManagement','Others'
-    ]
-    const Roles = [
-    {
-      category: "FullStack",
-      roles: [
-        "Full Stack Developer",
-        "MERN Stack Developer",
-        "MEAN Stack Developer",
-        "Java Full Stack Developer",
-        "Python Full Stack Developer",
-        "PHP Full Stack Developer"
-      ]
-    },
-    {
-      category: "Frontend",
-      roles: [
-        "Frontend Developer",
-        "React Developer",
-        "Angular Developer",
-        "Vue.js Developer",
-        "JavaScript Developer",
-        "UI Developer",
-        "Web Developer"
-      ]
-    },
-    {
-      category: "Backend",
-      roles: [
-        "Backend Developer",
-        "Node.js Developer",
-        "Java Developer",
-        "Python Developer",
-        "PHP Developer",
-        "Ruby on Rails Developer",
-        ".NET Developer",
-        "Golang Developer"
-      ]
-    },
-    {
-      category: "MobileDevelopment",
-      roles: [
-        "Mobile App Developer",
-        "React Native Developer",
-        "Flutter Developer",
-        "Android Developer",
-        "iOS Developer"
-      ]
-    },
-    {
-      category: "QATesting",
-      roles: [
-        "QA Engineer",
-        "SDET (Software Development Engineer in Test)",
-        "Automation Tester",
-        "Manual Tester",
-        "Performance Tester"
-      ]
-    },
-    {
-      category: "DevOpsCloudInfra",
-      roles: [
-        "DevOps Engineer",
-        "Cloud Engineer",
-        "Site Reliability Engineer (SRE)",
-        "AWS Engineer",
-        "Azure Engineer",
-        "Kubernetes Engineer"
-      ]
-    },
-    {
-      category: "Security",
-      roles: [
-        "Cybersecurity Analyst",
-        "Security Engineer",
-        "Penetration Tester"
-      ]
-    },
-    {
-      category: "DataAI",
-      roles: [
-        "Data Scientist",
-        "Data Analyst",
-        "Data Engineer",
-        "ML Engineer",
-        "AI Engineer",
-        "BI Developer"
-      ]
-    },
-    {
-      category: "ProductManagement",
-      roles: [
-        "Product Manager",
-        "Project Manager",
-        "Scrum Master",
-        "Technical Program Manager"
-      ]
-    },
-    {
-      category: "Others",
-      roles: [
-        "Software Engineer",
-        "Software Developer",
-        "Tech Lead",
-        "Intern - Software Development",
-        "Junior Developer",
-        "Senior Software Engineer"
-      ]
-    }
+    "Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"
   ];
-  
-      const handleSubmit =async (e)=>{
-        e.preventDefault();
-        navigate('/jobs/filter-jobs')
-        try{
-          const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/Jobs/filterJobs',{
-            method:'POST',
-            headers:{
-              'content-Type':'application/json'
-            },
-            body:JSON.stringify({roles,state,city,salary})
-          })
-          const data = await response.json();
-               setFilterd(data)
-          if(response.ok){
-            toast.success('Filterd jobs ')
-          }else{
-            toast.error('Error in showing filtered jobs')
-          }
-        }catch(err){
-            toast.error(err)
-        }
-      }
 
+  const Skills = [
+    "FullStack","Frontend","Backend","MobileDevelopment","QATesting","DevOpsCloudInfra",
+    "Security","DataAI","ProductManagement","Others"
+  ];
 
+  const Roles = [
+    { category: "FullStack", roles: ["Full Stack Developer","MERN Stack Developer","MEAN Stack Developer","Java Full Stack Developer","Python Full Stack Developer","PHP Full Stack Developer"] },
+    { category: "Frontend", roles: ["Frontend Developer","React Developer","Angular Developer","Vue.js Developer","JavaScript Developer","UI Developer","Web Developer"] },
+    { category: "Backend", roles: ["Backend Developer","Node.js Developer","Java Developer","Python Developer","PHP Developer","Ruby on Rails Developer",".NET Developer","Golang Developer"] },
+    { category: "MobileDevelopment", roles: ["Mobile App Developer","React Native Developer","Flutter Developer","Android Developer","iOS Developer"] },
+    { category: "QATesting", roles: ["QA Engineer","SDET","Automation Tester","Manual Tester","Performance Tester"] },
+    { category: "DevOpsCloudInfra", roles: ["DevOps Engineer","Cloud Engineer","SRE","AWS Engineer","Azure Engineer","Kubernetes Engineer"] },
+    { category: "Security", roles: ["Cybersecurity Analyst","Security Engineer","Penetration Tester"] },
+    { category: "DataAI", roles: ["Data Scientist","Data Analyst","Data Engineer","ML Engineer","AI Engineer","BI Developer"] },
+    { category: "ProductManagement", roles: ["Product Manager","Project Manager","Scrum Master","Technical Program Manager"] },
+    { category: "Others", roles: ["Software Engineer","Software Developer","Tech Lead","Intern - Software Development","Junior Developer","Senior Software Engineer"] }
+  ];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    navigate("/jobs/filter-jobs");
+    try {
+      const response = await fetch("https://jobtracker-backend-ql5b.onrender.com/Jobs/filterJobs", {
+        method: "POST",
+        headers: { "content-Type": "application/json" },
+        body: JSON.stringify({ roles, state, city, salary })
+      });
+      const data = await response.json();
+      setFilterd(data);
+      response.ok ? toast.success("Filtered jobs") : toast.error("Error filtering jobs");
+    } catch (err) {
+      toast.error(err.message || "Error fetching jobs");
+    }
+  };
 
   return (
-    <div className=' ml-18 mb-4 rounded-2xl mt-2 bg-sky-50 '>
-      
-       <span className='flex items-center justify-center gap-5'><h1 className='ml-5 mt-5 font-bold'>Filter By</h1><span className='mt-5'><IoFilter /></span></span> 
-       
-        <span className='flex items-center gap-5'><h1 className='text-sm ml-5'>Sort with </h1>
+    <div className="p-4 sm:p-5 md:ml-4 lg:ml-12 overflow-y-auto max-h-screen ">
+      {/* Header */}
+      <div className="flex items-center justify-between bg-white shadow-md rounded-2xl px-4 py-3 mb-5 sticky top-0 z-10">
+        <h1 className="font-bold text-base sm:text-lg flex items-center gap-2 text-gray-700">
+          <IoFilter className="text-blue-600" /> Filter Jobs
+        </h1>
         
-        <span className='text-2xl'>{toggleOn?<MdToggleOn onClick={()=>setToggleOn(!toggleOn)} className='text-blue-800 text-3xl'/>
-        :<PiToggleLeftLight onClick={()=>setToggleOn(!toggleOn)}/>}</span></span> 
-        <form onSubmit={handleSubmit}>
-        <div className='flex flex-col mt-4 bg-orange-300 ml-5 p-2  w-4/5 rounded-2xl'>
-        <h1 className='font-bold'>Skills</h1>
-        <label>Skiils</label>
-        <select value={skills} onChange={(e)=>setSkills(e.target.value)}>
-          <option>Choose Skills</option>
-          {Skills.map((skill,index)=>(
-            <option>{skill}</option>
-          ))}
-          
-        </select>
-        {skills && (<>
-        <label>Roles</label>
-        <select value={roles} onChange={(e)=>setRoles(e.target.value)}>
-          <option>Choose Roles</option>
-          {Roles.find((s)=>s.category ===skills)?.roles.map((role,index)=>(
-            <option>{role}</option>
-          ))}
+      </div>
 
-        </select>
-        </>)}
-        </div>
-       <span className='flex flex-col bg-orange-300 w-3/4 ml-5 p-3 rounded-2xl mt-4'>
-        <label className='font-bold'>Location</label>
-        <label>State</label>
-        <select  onChange={(e)=>setState(e.target.value)} value={state}>
-          <option value='' >Choose State</option>
-          {States.map((state)=>(
-            <option value={state} key={state}>{state}</option>
-          ))}
-        </select>
-        {state && (
-          <>
-          <label>City</label>
-          <select value={city} onChange={(e)=>setCity(e.target.value)}  >
-            <option value=''>Choose city</option>
-            {data.states.find((s)=>s.state === state)?.districts.map((districts)=>(
-              <option value={districts} key={districts}>{districts}</option>
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {/* Skills & Roles */}
+        <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
+          <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Skills</h2>
+          <select
+            value={skills}
+            onChange={(e) => setSkills(e.target.value)}
+            className="w-full border rounded-lg p-2 text-sm sm:text-base"
+          >
+            <option>Choose Skills</option>
+            {Skills.map((skill, i) => (
+              <option key={i}>{skill}</option>
             ))}
           </select>
-          
-          
-          </>
-        )}
-        </span>
-        <div className=' bg-orange-300 rounded-2xl p-3 ml-5 w-3/4 mt-4'>
-        <h1 className='font-bold'>Job Type</h1>
-        <span className='flex flex-col'>
-         <span className='flex justify-evenly  gap-5'><label>Full time</label> <input type='radio'/></span> 
-      <span className='flex justify-evenly  gap-5'><label>Part time</label> <input type='radio'/></span> 
-       <span className='flex justify-evenly gap-5'><label>Internship</label> <input type='radio'/></span>
-        </span>
+
+          {skills && (
+            <div className="mt-3">
+              <label className="font-medium text-gray-600 text-sm sm:text-base">Roles</label>
+              <select
+                value={roles}
+                onChange={(e) => setRoles(e.target.value)}
+                className="w-full border rounded-lg p-2 mt-1 text-sm sm:text-base"
+              >
+                <option>Choose Roles</option>
+                {Roles.find((s) => s.category === skills)?.roles.map((role, i) => (
+                  <option key={i}>{role}</option>
+                ))}
+              </select>
+            </div>
+          )}
         </div>
-        <div className=' bg-orange-300 rounded-2xl p-3 ml-5 w-3/4 mt-4'>
-       <h1 className='font-bold'>Pay Type</h1>
-       <h1>Salary</h1>
-       <span>{salary}</span>
-       <input type='range' min='0' max='100000' value={salary} onChange={(e)=>setSalary(e.target.value)} step='5000'/>
-      
-      </div>
-         <button className='bg-blue-800 p-2 rounded-2xl ml-14 cursor-pointer text-white mt-4 mb-3 ' type='submit'>Filter</button>
-         </form>
-      </div>
-  )
+
+        {/* Location */}
+        <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
+          <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Location</h2>
+          <select
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            className="w-full border rounded-lg p-2 mb-2 text-sm sm:text-base"
+          >
+            <option value="">Choose State</option>
+            {States.map((st) => (
+              <option key={st} value={st}>{st}</option>
+            ))}
+          </select>
+
+          {state && (
+            <select
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className="w-full border rounded-lg p-2 text-sm sm:text-base"
+            >
+              <option value="">Choose City</option>
+              {data.states.find((s) => s.state === state)?.districts.map((district) => (
+                <option key={district}>{district}</option>
+              ))}
+            </select>
+          )}
+        </div>
+
+        {/* Job Type */}
+        <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
+          <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Job Type</h2>
+          <div className="flex flex-col gap-2">
+            {["Full time", "Part time", "Internship"].map((type, i) => (
+              <label key={i} className="flex items-center gap-3 cursor-pointer text-sm sm:text-base">
+                <input type="radio" name="jobType" value={type} className="accent-blue-600" />
+                {type}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Salary */}
+        <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
+          <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Expected Salary</h2>
+          <p className="text-xs sm:text-sm text-gray-600 mb-1">₹ {salary} / month</p>
+          <input
+            type="range"
+            min="0"
+            max="100000"
+            value={salary}
+            onChange={(e) => setSalary(e.target.value)}
+            step="5000"
+            className="w-full accent-blue-600"
+          />
+        </div>
+
+        {/* Filter Button */}
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white font-semibold py-2 sm:py-3 rounded-2xl shadow-md hover:bg-blue-700 transition text-sm sm:text-base"
+        >
+          Apply Filters
+        </button>
+      </form>
+    </div>
+  );
 }
 
-export default Filter
+export default Filter;
