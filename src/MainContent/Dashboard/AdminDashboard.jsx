@@ -212,7 +212,7 @@ function AdminDashboard() {
         {isActive === '' && <AdminChart />}
 
         {/* Tables Wrapper */}
-        <div className="overflow-x-auto mt-6">
+        <div className="overflow-x-auto mt-6 sm:ml-16">
           {isActive === 'Application Received' && (
             <TableWrapper title="Applications" data={appliedApplication} applicationStatus={applicationStatus} setApplicationStatus={setApplicationStatus} setLastUpdated={setLastUpdated} />
           )}
