@@ -120,8 +120,9 @@ function Navbar() {
           `https://jobtracker-backend-ql5b.onrender.com/jobs/search-jobs?search=${query}`
         );
         const data = await response.json();
-        setSuggestion(data);
-        setSearchedJob(data);
+      
+        setSuggestion(data.jobs);
+        setSearchedJob(data.jobs);
       } catch (err) {
         console.log(err);
       }
