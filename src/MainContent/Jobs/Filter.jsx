@@ -14,7 +14,7 @@ function Filter() {
   const [salary, setSalary] = useState(0);
   const { setFilterd } = useContext(filteredContext);
   const navigate = useNavigate();
-  const [toggleOn, setToggleOn] = useState(false);
+
   const [skills, setSkills] = useState("");
 
   const States = [

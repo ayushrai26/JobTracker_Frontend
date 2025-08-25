@@ -10,15 +10,17 @@ import { FaRegEyeSlash } from "react-icons/fa"
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { toast } from 'react-toastify';
-
+import {Loader2} from 'lucide-react'
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(true)
+  const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/login', {
         method: 'POST',
@@ -53,6 +55,8 @@ function Login() {
     } catch (err) {
       console.error(err);
       alert('Server error. Please try again later.');
+    } finally{
+      setLoading(false)
     }
 
   }
@@ -145,9 +149,14 @@ function Login() {
             className='bg-blue-800 text-white rounded-2xl py-2 px-6 mt-5 cursor-pointer hover:bg-blue-900 transition'
             type='submit'
           >
-            LOG IN
+           {loading ? (<>
+           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+           </>):(<>
+           LOGIN
+           </>)}
           </button>
-
+          {loading && <p className="mt-2 text-gray-500">Please wait...</p>}
+      
           {/* Forgot password */}
           <div className='mt-3'>
             <Link to='/forgot-password'>

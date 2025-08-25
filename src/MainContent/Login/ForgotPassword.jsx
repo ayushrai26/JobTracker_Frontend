@@ -3,15 +3,18 @@ import Lottie from 'lottie-react'
 import forget from '../../assets/Animation - 1751277808652.json'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
+import { Loader } from 'lucide-react';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading,setLoading] = useState(false)
   const [accessToChangePassword, setAccessToChangePassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/forgetPassword', {
         method: 'POST',
@@ -27,11 +30,14 @@ function ForgotPassword() {
       }
     } catch (err) {
       console.log(err);
+    } finally{
+      setLoading(false)
     }
   };
 
   const handleFinalSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/changePassword', {
         method: 'PATCH',
@@ -50,6 +56,8 @@ function ForgotPassword() {
       }
     } catch (err) {
       console.log(err);
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -83,7 +91,11 @@ function ForgotPassword() {
                 className="bg-blue-700 p-3 text-white rounded-2xl hover:bg-blue-800 transition"
                 type="submit"
               >
+                {loading ? (<>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                </>):(<>
                 Reset Password
+                </>)}
               </button>
             </form>
           ) : (
@@ -99,7 +111,10 @@ function ForgotPassword() {
                 className="bg-blue-700 p-3 text-white rounded-2xl hover:bg-blue-800 transition"
                 type="submit"
               >
-                Reset Password
+                {loading?(<>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                </>):(<>Reset Password</>)}
+                
               </button>
             </form>
           )}

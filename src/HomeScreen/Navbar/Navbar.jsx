@@ -112,8 +112,10 @@ function Navbar() {
       setSuggestion([]);
       return;
     }
+    
     const timeoutId = setTimeout(async () => {
       try {
+        
         const response = await fetch(
           `https://jobtracker-backend-ql5b.onrender.com/jobs/search-jobs?search=${query}`
         );

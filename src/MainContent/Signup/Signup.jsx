@@ -6,16 +6,18 @@ import { MdOutlineRemoveRedEye, MdOutlineAlternateEmail, MdOutlineDriveFileRenam
 import logo from '../../assets/logo.png';
 import signup2 from '../../assets/5292747.jpg';
 import { toast } from 'react-toastify';
-
+import { Loader2 } from 'lucide-react';
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(true);
   const [fullName, setFullName] = useState('');
+  const [loading,setLoading] = useState(false)
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     try {
       const response = await fetch('https://jobtracker-backend-ql5b.onrender.com/user/signup', {
         method: 'POST',
@@ -33,6 +35,8 @@ function Signup() {
     } catch (err) {
       console.error(err);
       toast.error('An error occurred');
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -129,9 +133,13 @@ function Signup() {
             className="bg-blue-800 text-white rounded-2xl py-2 px-6 mt-5 cursor-pointer hover:bg-blue-900 transition"
             type="submit"
           >
+            {loading?(<>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            </>):(<>
             SIGN UP
+            </>)}
           </button>
-
+            {loading && <p className="mt-2 text-gray-500">Please wait...</p>}
           {/* Login Link */}
           <div className="p-3 flex flex-col items-center">
             <p className="text-sm">Already have an account?</p>
