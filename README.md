@@ -3,16 +3,18 @@
 ## 🚀 About
 This is the frontend of JOb Tracker Application, built with React.  
 It provides the user interface where users can :
--> Create a new Account
--> Login to their existing Account
--> Reset their Passwords ( Forget Password )
--> Apply for New Jobs by going on JObs Section
--> Access the Dashboard where they can track their Application status (i.e - Applied Applications , Selected , Rejected , UnderReview , Interviewed)
--> There is a search functionality on the top where they can search for available Jobs by Skills
--> User profile section where they can edit there personal details and upload their profile pictures
--> A Notificaation setion where they are notified when they apply to any jobs.
--> A filter functionality where they can filter jobs on the basis of SKills , Salary , location , Shift Type .
--> A Logout feature 
+- Create a new Account
+- Login to their existing Account
+- Reset their Passwords ( Forget Password )
+- Apply for New Jobs by going on JObs Section
+- Access the Dashboard where they can track their Application status (i.e - Applied Applications , Selected , Rejected , UnderReview , Interviewed)
+- There is a search functionality on the top where they can search for available Jobs by Skills
+- User profile section where they can edit there personal details and upload their profile pictures
+- A Notificaation setion where they are notified when they apply to any jobs.
+- A filter functionality where they can filter jobs on the basis of SKills , Salary , location , Shift Type .
+- A Logout feature 
+
+
 
 ## ✨ Features
 - User-friendly UI
