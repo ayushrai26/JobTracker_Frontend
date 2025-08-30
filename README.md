@@ -45,6 +45,9 @@ npm install
 # Start development server
 npm run dev
 
+# Related Repositories
+```
+- [Backend Repo](https://github.com/ayushrai26/JObTracker_backend)
 
 
 # Folder Struture 
