@@ -33,6 +33,9 @@ It provides the user interface where users can :
 - Lucide React Icons
 - Context API
 
+
+Live Demo 👉 [Job Tracker Application](https://job-tracker-frontend-qwvg.vercel.app/)
+
 ## ⚙️ Installation
 
 # Clone the repo
@@ -46,7 +49,7 @@ npm install
 npm run dev
 
 # Related Repositories
-```
+
 - [Backend Repo](https://github.com/ayushrai26/JObTracker_backend)
 
 
