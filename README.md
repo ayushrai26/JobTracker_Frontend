@@ -48,6 +48,7 @@ npm run dev
 
 
 # Folder Struture 
+```
 frontend
    ├─ dist
    │  ├─ assets
