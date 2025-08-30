@@ -40,6 +40,7 @@ Live Demo 👉 [Job Tracker Application](https://job-tracker-frontend-qwvg.verce
 
 # Clone the repo
 git clone https://github.com/ayushrai26/JobTracker_Frontend.git
+
 cd frontend
 
 # Install dependencies
