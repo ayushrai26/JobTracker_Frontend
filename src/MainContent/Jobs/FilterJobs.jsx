@@ -11,12 +11,12 @@ function FilterJobs() {
 
   return (
     <div className="flex flex-col md:flex-row h-full w-full shadow-2xl bg-gray-50 rounded-2xl overflow-hidden">
-      {/* Sidebar Filter */}
+    
       <div className="md:w-1/4 w-full md:sticky top-4 h-fit max-h-[90vh] overflow-auto bg-white p-4 border-r shadow-sm">
         <Filter />
       </div>
 
-      {/* Job Cards Section */}
+      
       <div className="flex-1 flex flex-wrap justify-center p-4 gap-6">
         {filtered && filtered.length > 0 ? (
           filtered.map((job, index) => (

@@ -30,7 +30,7 @@ function Apply() {
 
   const company = jobInfo?.jobDetails?.companyName;
 
-  // 📩 Email confirmation
+  
   const sendEmail = async () => {
     try {
       const response = await fetch(
@@ -50,13 +50,13 @@ function Apply() {
     }
   };
 
-  // 📝 Submit Application
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     let resumeUrl = null;
 
     try {
-      // Upload Resume
+      
       if (file) {
         const formData = new FormData();
         formData.append("resume", file);
@@ -76,7 +76,7 @@ function Apply() {
         toast.success("Resume uploaded!");
       }
 
-      // Save Application
+      
       const response = await fetch(
         "https://jobtracker-backend-ql5b.onrender.com/save/user-applied-applications",
         {
@@ -107,7 +107,7 @@ function Apply() {
 
       Swal.fire("Application Submitted Successfully!", "", "success");
 
-      // Reset form
+    
       setName("");
       setEmail("");
       setCoverLetter("");
@@ -117,7 +117,7 @@ function Apply() {
 
       await sendEmail();
 
-      // Save notification
+      
       if (user) {
         await fetch(
           "https://jobtracker-backend-ql5b.onrender.com/saveNotifications",
@@ -145,7 +145,7 @@ function Apply() {
     }
   };
 
-  // 🎯 Fetch Job Info
+  
   useEffect(() => {
     const fetchJob = async () => {
       try {
@@ -190,7 +190,7 @@ function Apply() {
         </p>
       </div>
 
-      {/* Application Form */}
+    
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
         <div>
           <label className="block font-medium mb-1">Full Name</label>
@@ -235,7 +235,7 @@ function Apply() {
           />
         </div>
 
-        {/* Resume Upload */}
+      
         <div className="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-xl p-6 cursor-pointer hover:border-blue-400 transition relative w-full">
           {!file ? (
             <label

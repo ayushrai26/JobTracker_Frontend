@@ -128,7 +128,7 @@ function Cards({ job }) {
   return (
     <div className="flex flex-col bg-blue-300 shadow-lg rounded-2xl p-5 w-full sm:w-[320px] md:w-[360px] lg:w-[380px] transition-all hover:shadow-xl hover:-translate-y-1 duration-300 m-3">
       
-      {/* Header */}
+      
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="rounded-xl p-3 w-12 h-12 flex items-center justify-center bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-bold text-lg shadow-md">
@@ -144,7 +144,7 @@ function Cards({ job }) {
           </div>
         </div>
 
-        {/* Bookmark */}
+        
         <div className="cursor-pointer bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition">
           {isBookmarked ? (
             <FaBookmark className="text-blue-600" onClick={deleteBookmark} />
@@ -154,7 +154,7 @@ function Cards({ job }) {
         </div>
       </div>
 
-      {/* Tags */}
+      
       <div className="flex flex-wrap gap-2 mt-4">
         <span className="bg-blue-50 text-blue-600 px-3 py-1 text-xs font-medium rounded-full">
           {eType || "N/A"}
@@ -169,7 +169,7 @@ function Cards({ job }) {
 
       <hr className="mt-4 border-gray-200" />
 
-      {/* Footer */}
+    
       <div className="flex justify-between mt-4 items-center">
         <p className="flex items-center gap-1 text-gray-700 font-medium text-sm">
           <AiTwotoneDollarCircle className="text-xl text-green-600" />

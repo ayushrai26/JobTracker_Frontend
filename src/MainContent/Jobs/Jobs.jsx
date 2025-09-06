@@ -27,12 +27,12 @@ function Jobs({ countValue }) {
 
   return (
     <div className="flex flex-col md:flex-row w-full shadow-2xl min-h-screen">
-      {/* Sidebar Filter */}
+    
       <div className="md:sticky md:top-0 md:h-screen w-full md:w-1/4 lg:w-1/5 bg-white border-r">
         <Filter />
       </div>
 
-      {/* Job Cards Section */}
+    
       <div className="flex-1 w-full p-4">
         {Array.isArray(allJob) && allJob.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

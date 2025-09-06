@@ -145,7 +145,7 @@ function AdminDashboard() {
 
   return (
     <div className="p-4 md:p-6 lg:p-8">
-      {/* Dashboard Cards */}
+    
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ml-16">
         <div className="bg-blue-600 h-32 flex flex-col justify-center items-center rounded-2xl shadow-md hover:scale-105 transition"
           onClick={handleJobPosted}>
@@ -176,7 +176,7 @@ function AdminDashboard() {
         </div>
       </div>
 
-      {/* Second Row of Cards */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 ml-16">
         <div className="bg-amber-600 h-32 flex flex-col justify-center items-center rounded-2xl shadow-md hover:scale-105 transition cursor-pointer"
           onClick={() => setIsActive('Interviewed')}>
@@ -207,14 +207,14 @@ function AdminDashboard() {
         </div>
       </div>
 
-      {/* Candidate Tables */}
+      
       <div className="mt-8">
         {isActive === '' && <AdminChart />}
 
         {/* Tables Wrapper */}
         <div className="overflow-x-auto mt-6 sm:ml-16">
           {isActive === 'Application Received' && (
-            <TableWrapper title="Applications" data={appliedApplication} applicationStatus={applicationStatus} setApplicationStatus={setApplicationStatus} setLastUpdated={setLastUpdated} />
+            <Table title="Applications" data={appliedApplication} applicationStatus={applicationStatus} setApplicationStatus={setApplicationStatus} setLastUpdated={setLastUpdated} />
           )}
 
           {isActive === 'Shortlisted Candidate' && (
@@ -246,8 +246,8 @@ function AdminDashboard() {
   )
 }
 
-/* Reusable Table Components */
-const TableWrapper = ({ title, data, applicationStatus, setApplicationStatus, setLastUpdated }) => (
+
+const Table = ({ title, data, applicationStatus, setApplicationStatus, setLastUpdated }) => (
   <>
     <h1 className="text-2xl font-semibold text-center">{title}</h1>
     <table className="min-w-full border mt-4 bg-white rounded-lg shadow">

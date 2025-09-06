@@ -27,7 +27,7 @@ function Navbar() {
   const { searchedJob, setSearchedJob } = useContext(SearchedJobContext);
   const user = JSON.parse(localStorage.getItem("user"));
 
-  // Fetch Applied Jobs
+  
   useEffect(() => {
     const Applied = async () => {
       try {
@@ -106,7 +106,7 @@ function Navbar() {
     }
   };
 
-  // Search jobs with debounce
+  
   useEffect(() => {
     if (!query.trim()) {
       setSuggestion([]);
@@ -135,7 +135,7 @@ function Navbar() {
     setQuery("");
   }, [location.pathname]);
 
-  // Fetch personal info
+  
   useEffect(() => {
     const fetchPersonalInfo = async () => {
       try {
@@ -159,7 +159,7 @@ function Navbar() {
     fetchPersonalInfo();
   }, [profileUdpated]);
 
-  // Fetch user profile pic
+  
   useEffect(() => {
     const fetchUserProfileUrl = async () => {
       try {
@@ -225,7 +225,7 @@ function Navbar() {
 
   return (
     <div className="bg-blue-100 w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 rounded-xl shadow-md gap-3">
-      {/* Logo */}
+      
       <div className="flex items-center gap-2 md:gap-3">
         <img
           src={logo}
@@ -239,12 +239,12 @@ function Navbar() {
         </Link>
       </div>
 
-      {/* Route Heading */}
+      
       <h2 className="text-lg md:text-xl font-semibold text-gray-700 text-center">
         {getHeading(location.pathname)}
       </h2>
 
-      {/* Search Bar */}
+      
       <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
         <div className="flex items-center bg-white rounded-xl px-3 py-1 w-full shadow-sm">
           <input
@@ -281,7 +281,7 @@ function Navbar() {
         )}
       </div>
 
-      {/* Profile Section */}
+      
       <div className="flex items-center gap-3 relative">
         <div className="flex items-center gap-2 cursor-pointer">
           <div className="rounded-full bg-gray-300 w-8 h-8 md:w-10 md:h-10 overflow-hidden">
@@ -305,7 +305,7 @@ function Navbar() {
                       onClick={() => setProfileOpened((prev) => !prev)}
                     />
 
-                    {/* Left: Profile pic */}
+                  
                     <div className="bg-amber-500 md:w-1/2 flex flex-col items-center py-6 px-4">
                       <div className="rounded-full bg-amber-50 w-40 h-40 md:w-60 md:h-60 overflow-hidden">
                         {preview && (
@@ -339,7 +339,7 @@ function Navbar() {
                       </div>
                     </div>
 
-                    {/* Right: Info form */}
+                  
                     <div className="flex-1 p-6">
                       <h1 className="font-bold text-lg mb-4">
                         Personal Information

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
@@ -17,7 +16,6 @@ function Login() {
   const [showPassword, setShowPassword] = useState(true)
   const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true)
@@ -30,10 +28,8 @@ function Login() {
         body: JSON.stringify({ email, password })
       })
       const data = await response.json();
-      console.log(data)
 
       if (response.ok) {
-        console.log('Login successfull')
         localStorage.setItem('user', JSON.stringify(data.user));
         localStorage.setItem('token', data.token)
         if (data.user.role === 'admin') {
@@ -62,7 +58,6 @@ function Login() {
   }
   return (
     <div className='flex flex-col lg:flex-row h-screen'>
-      {/* Left side */}
       <div className='bg-blue-700 w-full lg:w-1/2 h-1/3 lg:h-full flex flex-col justify-center items-center p-6'>
         <div className='flex items-center gap-4'>
           <img src={logo} className='w-16 h-16 rounded-full' alt="TrackHire Logo" />
@@ -91,8 +86,6 @@ function Login() {
           </div>
         </div>
       </div>
-
-      {/* Right side */}
       <div className='w-full lg:w-1/2 flex justify-center items-center p-6'>
         <form
           className='flex flex-col items-center justify-center bg-amber-100 w-full max-w-md p-6 md:p-10 rounded-2xl shadow-lg'
@@ -100,7 +93,6 @@ function Login() {
         >
           <h1 className='text-xl md:text-2xl font-bold'>Login</h1>
 
-          {/* Email input */}
           <span className='relative bg-gray-100 rounded-2xl w-full p-3 mt-5'>
             <input
               type='email'
@@ -113,7 +105,6 @@ function Login() {
             <MdOutlineAlternateEmail className='absolute right-4 top-4 text-gray-500' />
           </span>
 
-          {/* Password input */}
           {showPassword ? (
             <span className='bg-gray-100 rounded-2xl w-full p-3 mt-5 relative'>
               <input
@@ -144,7 +135,6 @@ function Login() {
             </span>
           )}
 
-          {/* Button */}
           <button
             className='bg-blue-800 text-white rounded-2xl py-2 px-6 mt-5 cursor-pointer hover:bg-blue-900 transition'
             type='submit'
@@ -157,14 +147,11 @@ function Login() {
           </button>
           {loading && <p className="mt-2 text-gray-500">Please wait...</p>}
       
-          {/* Forgot password */}
           <div className='mt-3'>
             <Link to='/forgot-password'>
               <p className='text-sm text-blue-600 hover:underline'>Forget Password ?</p>
             </Link>
           </div>
-
-          {/* Register link */}
           <div className='p-3 flex flex-col items-center text-center'>
             <p className='text-sm'>Don't have an account yet?<br /></p>
             <p className='text-sm'>Sign up here for free!</p>

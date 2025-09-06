@@ -69,7 +69,7 @@ function AdminChart() {
 
   return (
     <div className="p-4 md:p-8 flex flex-col lg:flex-row gap-6 lg:gap-10 justify-center items-stretch">
-      {/* Bar Chart */}
+      
       <div className="w-full lg:w-2/3 h-[300px] sm:h-[400px] bg-white shadow-md rounded-xl p-4">
         <h2 className="text-lg sm:text-xl font-semibold text-center mb-4">Jobs by Title</h2>
         <div className="w-full h-full">
@@ -97,7 +97,7 @@ function AdminChart() {
         </div>
       </div>
 
-      {/* Pie Chart */}
+    
       <div className="w-full lg:w-1/3 h-[300px] sm:h-[400px] bg-white shadow-md rounded-xl p-4">
         <h2 className="text-lg sm:text-xl font-semibold text-center mb-4">Jobs Distribution</h2>
         <div className="w-full h-full">

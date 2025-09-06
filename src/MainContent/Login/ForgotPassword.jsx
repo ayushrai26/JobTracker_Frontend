@@ -63,14 +63,14 @@ function ForgotPassword() {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-12">
-      {/* Left Section - Animation */}
+
       <div className="w-full md:w-1/2 flex items-center justify-center mb-10 md:mb-0">
         <div className="w-3/4 max-w-md">
           <Lottie loop autoplay animationData={forget} />
         </div>
       </div>
 
-      {/* Right Section - Form */}
+    
       <div className="w-full md:w-1/2 flex flex-col items-center">
         <div className="w-full max-w-md">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 text-center md:text-left">
@@ -92,7 +92,7 @@ function ForgotPassword() {
                 type="submit"
               >
                 {loading ? (<>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader className="mr-2 h-4 w-4 animate-spin" />
                 </>):(<>
                 Reset Password
                 </>)}
@@ -112,7 +112,7 @@ function ForgotPassword() {
                 type="submit"
               >
                 {loading?(<>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                <Loader className="mr-2 h-4 w-4 animate-spin" />
                 </>):(<>Reset Password</>)}
                 
               </button>

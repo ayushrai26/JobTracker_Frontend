@@ -24,7 +24,7 @@ function MessageUi({ company, skill, id, time }) {
   };
 
   const handleRead = () => {
-    setRead(true); // ✅ update context state
+    setRead(true); 
   };
 
   return (
@@ -33,16 +33,16 @@ function MessageUi({ company, skill, id, time }) {
         ${read ? 'bg-gray-100' : 'bg-white border-l-4 border-blue-500'}
       `}
     >
-      {/* Avatar */}
+      
       <div className="h-12 w-12 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-bold text-lg shadow">
         {company[0]?.toUpperCase()}
       </div>
 
-      {/* Notification Content */}
+      
       <div className="flex-1">
         <div className="flex items-center justify-between">
           <h1 className="text-base font-semibold text-gray-800">
-            Successfully Applied 🎉
+            Successfully Applied 
           </h1>
           <span className="text-xs text-gray-500">{time}</span>
         </div>
@@ -52,7 +52,7 @@ function MessageUi({ company, skill, id, time }) {
           <span className="font-medium">{company}</span> has been submitted.
         </p>
 
-        {/* Action buttons */}
+      
         <div className="flex items-center justify-between mt-3 text-sm">
           <button
             onClick={handleRead}

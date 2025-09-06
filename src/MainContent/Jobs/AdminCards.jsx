@@ -39,7 +39,7 @@ function AdminCards({ job, setAllJob, setRefreshFlag }) {
   return (
     <div className="flex flex-col bg-blue-300 shadow-lg rounded-2xl p-5 w-full sm:w-[320px] md:w-[360px] lg:w-[380px] transition-all hover:shadow-xl hover:-translate-y-1 duration-300 m-3">
       
-      {/* Header Section */}
+    
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="rounded-xl p-3 w-12 h-12 flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold text-lg shadow-md">
@@ -56,7 +56,7 @@ function AdminCards({ job, setAllJob, setRefreshFlag }) {
         </div>
       </div>
 
-      {/* Tags Section */}
+      
       <div className="flex flex-wrap gap-2 mt-4">
         <span className="bg-blue-50 text-blue-600 px-3 py-1 text-xs font-medium rounded-full">
           {eType || "N/A"}
@@ -71,7 +71,7 @@ function AdminCards({ job, setAllJob, setRefreshFlag }) {
 
       <hr className="mt-4 border-gray-200" />
 
-      {/* Footer Section */}
+      
       <div className="flex justify-between mt-4 items-center">
         <p className="flex items-center gap-1 text-gray-700 font-medium text-sm">
           <AiTwotoneDollarCircle className="text-xl text-green-600" />

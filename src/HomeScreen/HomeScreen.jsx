@@ -24,7 +24,7 @@ function HomeScreen() {
   }
 
   const [count, setCount] = useState(0)
-  const [sidebarOpen, setSidebarOpen] = useState(false) // ✅ state for sidebar toggle
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const location = useLocation()
   const isLandingPage = location.pathname === '/'
@@ -49,12 +49,12 @@ function HomeScreen() {
         </Routes>
       ) : (
         <div className="flex h-screen overflow-hidden">
-          {/* Sidebar for large screens */}
+      
           <div className="hidden md:flex">
             <Sidebar />
           </div>
 
-          {/* Mobile Sidebar (Drawer) */}
+      
           <div
             className={`fixed inset-0 z-40 md:hidden transition-transform duration-300 ${
               sidebarOpen ? 'translate-x-0' : '-translate-x-full'
@@ -66,9 +66,9 @@ function HomeScreen() {
             </div>
           </div>
 
-          {/* Main Content */}
+          
           <div className="flex flex-col flex-grow">
-            {/* Navbar with toggle */}
+        
             <Navbar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
             <div className="flex-grow overflow-y-auto">
@@ -87,8 +87,16 @@ function HomeScreen() {
                 />
                 <Route
                   path="/admin/dashboard"
-                  element={role.role === 'admin' && <AdminDashboard />}
-                />
+               element={
+                role.role === 'admin' ? (
+                <ProtectedRoutes>
+                <AdminDashboard />
+             </ProtectedRoutes>
+              ) : (
+               <Navigate to="/login" />
+              )
+               }
+              />
                 <Route
                   path="/admin/post-job"
                   element={

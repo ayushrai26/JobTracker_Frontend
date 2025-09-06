@@ -13,11 +13,11 @@ function ProtectedRoutes({children}) {
     const isExpire = decoded.exp*1000 < Date.now();
     if(isExpire){
       localStorage.removeItem('token');
-      <Navigate to='/login'/>
+      return <Navigate to='/login'/>
     }
     }catch(err){
      localStorage.removeItem('token');
-     <Navigate to='/login'/>
+    return <Navigate to='/login'/>
     }
 
   return (

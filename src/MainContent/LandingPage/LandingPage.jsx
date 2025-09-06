@@ -1,6 +1,4 @@
-import React from 'react'
-import Navbar from '../../HomeScreen/Navbar/Navbar'
-import { Link, Navigate } from 'react-router'
+import { Link } from 'react-router'
 import { RiFunctionAddLine } from "react-icons/ri";
 import photo from '../../assets/photo.png'
 import photo1 from '../../assets/photo1.png'

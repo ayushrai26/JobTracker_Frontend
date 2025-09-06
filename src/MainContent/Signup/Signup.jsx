@@ -42,7 +42,7 @@ function Signup() {
 
   return (
     <div className="flex flex-col lg:flex-row h-screen items-center justify-center">
-      {/* Left Section */}
+    
       <div className="bg-blue-700 w-full lg:w-1/2 h-full flex flex-col gap-5 justify-center items-center p-6">
         <div className="flex items-center gap-5">
           <img src={logo} className="w-16 h-16 sm:w-20 sm:h-20 rounded-full" alt="logo" />
@@ -61,7 +61,7 @@ function Signup() {
         </div>
       </div>
 
-      {/* Right Section */}
+    
       <div className="w-full lg:w-1/2 flex justify-center items-center p-6">
         <form
           onSubmit={handleSubmit}
@@ -69,7 +69,7 @@ function Signup() {
         >
           <h1 className="text-xl sm:text-2xl font-bold">Sign Up</h1>
 
-          {/* Full Name */}
+          
           <span className="relative bg-gray-100 rounded-2xl w-full sm:w-3/4 p-3 mt-5">
             <input
               type="text"
@@ -82,7 +82,7 @@ function Signup() {
             <MdOutlineDriveFileRenameOutline className="absolute right-6 top-4" />
           </span>
 
-          {/* Email */}
+          
           <span className="relative bg-gray-100 rounded-2xl w-full sm:w-3/4 p-3 mt-5">
             <input
               type="email"
@@ -95,7 +95,7 @@ function Signup() {
             <MdOutlineAlternateEmail className="absolute right-6 top-4" />
           </span>
 
-          {/* Password */}
+        
           {showPassword ? (
             <span className="relative bg-gray-100 rounded-2xl w-full sm:w-3/4 p-3 mt-5">
               <input
@@ -128,7 +128,7 @@ function Signup() {
             </span>
           )}
 
-          {/* Signup Button */}
+        
           <button
             className="bg-blue-800 text-white rounded-2xl py-2 px-6 mt-5 cursor-pointer hover:bg-blue-900 transition"
             type="submit"
@@ -140,7 +140,7 @@ function Signup() {
             </>)}
           </button>
             {loading && <p className="mt-2 text-gray-500">Please wait...</p>}
-          {/* Login Link */}
+          
           <div className="p-3 flex flex-col items-center">
             <p className="text-sm">Already have an account?</p>
             <Link className="p-2" to="/login">

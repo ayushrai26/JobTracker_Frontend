@@ -20,13 +20,20 @@ function Sidebar() {
 
   return (
     <aside
-      className={`
-        fixed h-full z-20 bg-gray-300 shadow-lg
-        ${openSidebar ? 'w-64' : 'w-16'}
-        transition-all duration-300
-      `}
-    >
-      {/* Header */}
+  className={`
+    fixed top-0 left-0 h-full z-30 bg-gray-300 shadow-lg
+    transition-all duration-300 ease-in-out
+    ${openSidebar ? "translate-x-0 w-64" : "-translate-x-full w-64"}
+    md:translate-x-0 md:${openSidebar ? "w-64" : "w-16"}
+  `}
+>
+  <button
+  onClick={() => setOpenSidebar(true)}
+  className="fixed top-4 left-4 z-40 p-2 bg-gray-200 rounded-md lg:hidden"
+>
+  <Menu size={22} />
+</button>
+    
       <div className="flex items-center justify-between p-4 h-16 border-b border-gray-200">
         {openSidebar ? (
           <>
@@ -48,7 +55,7 @@ function Sidebar() {
         )}
       </div>
 
-      {/* Sidebar Items */}
+    
       <div className="flex flex-col gap-y-3 m-4">
         {[
           ...(role.role === 'admin'
@@ -78,7 +85,7 @@ function Sidebar() {
           </Link>
         ))}
 
-        {/* Logout */}
+      
         <div
           onClick={logOut}
           className={`

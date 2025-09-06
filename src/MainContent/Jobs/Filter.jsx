@@ -60,7 +60,7 @@ function Filter() {
 
   return (
     <div className="p-4 sm:p-5 md:ml-4 lg:ml-12 overflow-y-auto max-h-screen ">
-      {/* Header */}
+      
       <div className="flex items-center justify-between bg-white shadow-md rounded-2xl px-4 py-3 mb-5 sticky top-0 z-10">
         <h1 className="font-bold text-base sm:text-lg flex items-center gap-2 text-gray-700">
           <IoFilter className="text-blue-600" /> Filter Jobs
@@ -69,7 +69,7 @@ function Filter() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-5">
-        {/* Skills & Roles */}
+      
         <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
           <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Skills</h2>
           <select
@@ -100,7 +100,7 @@ function Filter() {
           )}
         </div>
 
-        {/* Location */}
+      
         <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
           <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Location</h2>
           <select
@@ -128,7 +128,7 @@ function Filter() {
           )}
         </div>
 
-        {/* Job Type */}
+      
         <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
           <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Job Type</h2>
           <div className="flex flex-col gap-2">
@@ -141,7 +141,7 @@ function Filter() {
           </div>
         </div>
 
-        {/* Salary */}
+      
         <div className="bg-white p-3 sm:p-4 rounded-2xl shadow-md">
           <h2 className="font-semibold text-gray-700 mb-2 text-sm sm:text-base">Expected Salary</h2>
           <p className="text-xs sm:text-sm text-gray-600 mb-1">₹ {salary} / month</p>
@@ -156,7 +156,7 @@ function Filter() {
           />
         </div>
 
-        {/* Filter Button */}
+      
         <button
           type="submit"
           className="w-full bg-blue-600 text-white font-semibold py-2 sm:py-3 rounded-2xl shadow-md hover:bg-blue-700 transition text-sm sm:text-base"

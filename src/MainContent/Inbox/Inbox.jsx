@@ -27,7 +27,7 @@ function Inbox() {
 
   return (
     <div className="ml-20 mt-5 flex flex-col w-[80%] mx-auto">
-      {/* Header */}
+      
       <div className="flex items-center justify-between mb-6 border-b pb-3">
         <div className="flex items-center space-x-2">
           <IoIosNotifications className="text-3xl text-blue-500" />
@@ -40,7 +40,7 @@ function Inbox() {
         )}
       </div>
 
-      {/* Notifications List */}
+      
       <div className="space-y-4">
         {Array.isArray(notifications) && notifications.length > 0 ? (
           notifications.map((notification, index) => (
@@ -61,7 +61,7 @@ function Inbox() {
             </div>
           ))
         ) : (
-          // Empty State
+          
           <div className="flex flex-col items-center justify-center mt-20 text-gray-600">
             <div className="w-64 h-64">
               <Lottie animationData={empty} loop={true} />

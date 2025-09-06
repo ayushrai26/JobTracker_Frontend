@@ -166,10 +166,10 @@ function UserDashboard() {
 
   return (
     <div className="flex flex-col mt-6 px-4 sm:px-6 lg:px-12">
-      {/* Top Grid Section */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:ml-16">
         
-        {/* Available Jobs */}
+        
         <div
           className="flex items-center justify-between bg-blue-600 text-white rounded-2xl p-4 shadow-lg hover:bg-blue-500 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => { setIsActive('availableApplications'); navigate('/jobs') }}
@@ -181,7 +181,7 @@ function UserDashboard() {
           <Lottie animationData={av} style={{ width: 80 }} />
         </div>
 
-        {/* Bookmarked Jobs */}
+        
         <div
           className="flex items-center justify-between bg-yellow-500 text-white rounded-2xl p-4 shadow-lg hover:bg-yellow-400 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => setIsActive('bookmarkedJobs')}
@@ -193,7 +193,7 @@ function UserDashboard() {
           <Lottie animationData={bookmark} style={{ width: 60 }} />
         </div>
 
-        {/* Applied Jobs */}
+    
         <div
           className="flex items-center justify-between bg-orange-500 text-white rounded-2xl p-4 shadow-lg hover:bg-orange-400 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => setIsActive('appliedApplications')}
@@ -205,7 +205,7 @@ function UserDashboard() {
           <Lottie animationData={appliedapp} style={{ width: 90 }} />
         </div>
 
-        {/* Interview Scheduled */}
+      
         <div
           className="flex items-center justify-between bg-green-600 text-white rounded-2xl p-4 shadow-lg hover:bg-green-500 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => setIsActive('interviewScheduled')}
@@ -218,10 +218,10 @@ function UserDashboard() {
         </div>
       </div>
 
-      {/* Second Grid */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 sm:ml-16">
 
-        {/* Rejected */}
+      
         <div
           className="flex items-center justify-between bg-red-500 text-white rounded-2xl p-4 shadow-lg hover:bg-red-400 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => setIsActive('rejected')}
@@ -233,7 +233,7 @@ function UserDashboard() {
           <Lottie animationData={rejectLogo} style={{ width: 80 }} />
         </div>
 
-        {/* Selected */}
+    
         <div
           className="flex items-center justify-between bg-green-500 text-white rounded-2xl p-4 shadow-lg hover:bg-green-400 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => setIsActive('selected')}
@@ -245,7 +245,7 @@ function UserDashboard() {
           <Lottie animationData={select} style={{ width: 80 }} />
         </div>
 
-        {/* Under Review */}
+        
         <div
           className="flex items-center justify-between bg-amber-400 text-white rounded-2xl p-4 shadow-lg hover:bg-amber-300 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => setIsActive('underReview')}
@@ -257,7 +257,7 @@ function UserDashboard() {
           <Lottie animationData={loading} style={{ width: 80 }} />
         </div>
 
-        {/* Shortlisted */}
+      
         <div
           className="flex items-center justify-between bg-gray-400 text-white rounded-2xl p-4 shadow-lg hover:bg-gray-300 transition-transform duration-300 hover:scale-105 cursor-pointer"
           onClick={() => setIsActive('shortlisted')}
@@ -270,7 +270,7 @@ function UserDashboard() {
         </div>
       </div>
 
-      {/* Conditional Render Sections */}
+      
       <div className="mt-8">
         {isActive === 'bookmarkedJobs' && (
           <>
@@ -496,7 +496,7 @@ function UserDashboard() {
         
       </div>
 
-      {/* Chart Section */}
+      
       <div className="mt-10 w-full">
         <Chart />
       </div>

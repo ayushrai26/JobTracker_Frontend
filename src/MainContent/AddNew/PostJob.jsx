@@ -79,7 +79,7 @@ function PostJob({setValue}) {
   return (
      <div className="bg-amber-200 ml-18 mr-2 mt-5 rounded-2xl mb-4 h-full overflow-y-auto px-4 md:px-16">
 
-      {/* Header */}
+      
       <div className='p-5'>
         <h1 className='text-2xl font-bold'>Create Job</h1>
         <p className='text-sm'>Define details, budget and outline preferences</p>
@@ -87,7 +87,7 @@ function PostJob({setValue}) {
 
       <hr className='mx-6 border-gray-100' />
         
-      {/* Job Details */}
+      
       <form onSubmit={handleSubmit}>
       <div className='flex flex-col md:flex-row p-6 gap-6'>
         <div className='md:w-1/2'>
@@ -140,7 +140,7 @@ function PostJob({setValue}) {
 
       <hr className='mx-6 border-gray-100' />
 
-      {/* Compensation */}
+    
       <div className='flex flex-col md:flex-row p-6 gap-6'>
         <div className='md:w-1/2'>
           <h1 className='text-l font-medium'>2. Compensation</h1>
@@ -180,7 +180,7 @@ function PostJob({setValue}) {
 
       <hr className='mx-6 border-gray-100' />
 
-      {/* Job Description */}
+  
       <div className='flex flex-col md:flex-row p-6 gap-6'>
         <div className='md:w-1/2'>
           <h1 className='text-l font-medium'>3. Job Description</h1>
@@ -200,7 +200,7 @@ function PostJob({setValue}) {
 
       <hr className='mx-6 border-gray-100' />
 
-      {/* Buttons */}
+    
       <div className='flex flex-wrap justify-end p-6 gap-4'>
         <button className='rounded-xl bg-blue-800 text-white font-bold px-4 py-2 cursor-pointer' type='submit'>+ Post Job</button>
         <button className='rounded-xl bg-white text-black font-bold px-4 py-2 flex items-center cursor-pointer' type='button' onClick={handleDraftSave}>
