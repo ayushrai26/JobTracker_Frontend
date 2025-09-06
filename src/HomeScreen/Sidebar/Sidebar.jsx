@@ -23,8 +23,8 @@ function Sidebar() {
   className={`
     fixed top-0 left-0 h-full z-30 bg-gray-300 shadow-lg
     transition-all duration-300 ease-in-out
-    ${openSidebar ? "translate-x-0 w-64" : "-translate-x-full w-64"}
-    md:translate-x-0 md:${openSidebar ? "w-64" : "w-16"}
+    ${openSidebar ? " w-64" : " w-16"}
+    
   `}
 >
   <button
